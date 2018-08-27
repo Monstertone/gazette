@@ -1,0 +1,62 @@
+@font-face {
+   font-family: ShadowedBlack;
+   src: url(fonts/ShadowedBlack.ttf);
+}
+
+
+
+.main {
+  border: 1px solid black;
+}
+
+
+
+.row {
+  /* border: 1px solid black; */
+  /* min-height: 100px; */
+}
+
+.leftheadbox {
+  text-align: center;
+  vertical-align:middle;
+  border: 1px solid black;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin:10px;
+  padding: 10px 5px;
+}
+.datebar {
+  text-align: center;
+  border-bottom-style: double;
+  border-top-style: double;
+  padding: 1px;
+}
+
+.formregion {
+  padding:7px;
+  text-align:center;
+}
+.testDiv {
+  background-color: blue;
+  min-height: 300px;
+  width: 100%;
+  border: 1px solid black;
+  margin-top: 10px;
+}
+
+
+/* TEXT STYLES */
+
+#main-title {
+  font-size: 4em;
+  font-family: ShadowedBlack;
+  color: black;
+  margin:20px 15px;
+}
+
+/* BUTTON STYLES */
+
+#searchBtn {
+  margin-left: 10px;
+
+}
