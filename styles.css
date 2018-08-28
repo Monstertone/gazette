@@ -5,6 +5,7 @@
 
 .main {
   border: 1px solid black;
+  box-shadow: 5px 5px 5px grey;
 }
 
 .flexible {
@@ -44,13 +45,7 @@
   padding:7px;
   text-align:center;
 }
-.testDiv {
-  background-color: blue;
-  min-height: 300px;
-  width: 100%;
-  border: 1px solid black;
-  margin-top: 10px;
-}
+
 /* THESE ARE THE STYLES FOR THE RETURNED DATA */
 
 #newsContainer {
@@ -64,6 +59,7 @@
 .storyDiv  {
   background-color: #F5F5F5;
   display: flex;
+  justify-content: space-between;
   width: 100%;
   border: 1px solid black;
   /* margin: 1em; */
@@ -80,6 +76,7 @@
 }
 .storyDescription {
   padding:4px;
+  min-height: 30px;
   border-bottom: 2px solid black;
 }
 .storyAuthor {
@@ -102,13 +99,20 @@ border-right: 1px solid #333333;
 border-bottom: 1px solid #333333;
 border-left: 1px solid #CCCCCC;
 }
+.storyBtn:hover {
+  text-decoration: none;
+  background-color: #FFF;
+  color: #303030;
+}
 
 .imgDiv {
   /* display:inline; */
-  float:right;
+  /* float:right; */
+
   margin-left: 50px;
   border: 1px solid black;
   /* padding:.5em; */
+
 }
 .storyImg {
   max-height: 150px;
