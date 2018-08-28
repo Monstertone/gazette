@@ -16,7 +16,21 @@ insertDate.innerHTML = newsDate;
 
  axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=6560880c487746438fe80efea6edbe2d').then(function(response){
 
-   console.log(response.data.articles[0]);
+  response.data.articles.forEach(function(myData){
+
+    // console.log(myData['author']);
+    console.log(myData);
+
+    // let newsDiv = document.createElement('div')
+    // newsDiv.setAttribute("class=" , storyDiv);
+    // newsDiv.innerHTML='myData'
+    // document.getElementById('newsContainer')
+
+
+    // newsDiv.
+  })
+
+   // console.log(response.data.articles[0]);
  });
 
 }
