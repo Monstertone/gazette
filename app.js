@@ -14,6 +14,8 @@ let newsDate = currentDay[day] + " " + currentMonth[month]+ " " + date + ", " + 
 let insertDate = document.querySelector('.datebar');
 insertDate.innerHTML = newsDate;
 
+// THIS AREA PRODUCES THE INITIAL GRAB OF 20 LATEST STORIES AND PLACES THEM ON THE FRONT PAGE
+
  axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=6560880c487746438fe80efea6edbe2d').then(function(response){
     let storiesArray = response.data.articles;
     let storyCount = storiesArray.length;
@@ -38,49 +40,35 @@ insertDate.innerHTML = newsDate;
            if (!getImg) {
              getImg = "images/news-placeholder.jpg";
            }
-           // console.log(getImg);
-       // let containerPush = document.getElementById('newsContainer')
-       // let storyPush = document.querySelector('.storyDiv');
-       // let newPush = storyPush.cloneNode(true);
-       //
-       // containerPush.appendChild(newPush);
+
 
        let newTitle = document.querySelector('.storyTitle')
        let newDescription = document.querySelector('.storyDescription')
        let newAuthor = document.querySelector('.storyAuthor')
        let newUrl = document.querySelector('.storyBtn')
        let newImg = document.querySelector('.storyImg')
-       newTitle.innerHTML = getTitle;
-       newDescription.innerHTML = getDescription;
-       newUrl.setAttribute("href", getUrl)
-       newImg.setAttribute("src", getImg);
+           newTitle.innerHTML = getTitle;
+           newDescription.innerHTML = getDescription;
+           newUrl.setAttribute("href", getUrl)
+           newImg.setAttribute("src", getImg);
 
-       newAuthor.innerHTML = (`Author:${getAuthor} Source:${getSource}`)
+           newAuthor.innerHTML = (`Author:&#160&#160${getAuthor}&#160&#160&#160&#160&#160 Source:${getSource}`)
 
        let containerPush = document.getElementById('newsContainer')
        let storyPush = document.querySelector('.storyDiv');
        let newPush = storyPush.cloneNode(true);
 
-       containerPush.appendChild(newPush);
+           containerPush.appendChild(newPush);
 
+     };
 
+   });
 
+            let searchNews = document.getElementById('searchBtn');
+            let searchTopic = document.getElementById('searchInput');
 
-
-
-
-  // console.log(newPush);
-      // console.log(getTitle);
-      // console.log(getDescription);
-    };
-
-
-    // console.log(storiesArray);
-    console.log(storyCount);
-
-   // console.log(response.data.articles[0]);
-
-   // console.log(response.data.articles[0]);
- });
-
+            searchNews.addEventListener('click', function(e){
+              e.preventDefault();
+              console.log("click confirmed")
+      })
 }
