@@ -49,7 +49,9 @@ getNews(latestNews)
            if (!getImg) {
              getImg = "images/news-placeholder.jpg";
            }
+      let getPublishDate = response.data.articles[i]['publishedAt'];
 
+      console.log(getPublishDate);
 
        let newTitle = document.querySelector('.storyTitle')
        let newDescription = document.querySelector('.storyDescription')
@@ -61,7 +63,7 @@ getNews(latestNews)
            newUrl.setAttribute("href", getUrl)
            newImg.setAttribute("src", getImg);
 
-           newAuthor.innerHTML = (`Author:&#160&#160${getAuthor}&#160&#160&#160&#160&#160 Source:&#160&#160${getSource}`)
+           newAuthor.innerHTML = (`Author:&#160&#160${getAuthor}&#160&#160&#160&#160&#160 Source:&#160&#160${getSource}&#160&#160&#160&#160&#160Publish Date:${getPublishDate}`)
 
        // let containerPush = document.getElementById('newsContainer')
        let storyPush = document.querySelector('.storyDiv');
@@ -72,6 +74,8 @@ getNews(latestNews)
      };
 
    });
+
+     // FUNCTION TO PASS CUSTOM SEARCH TO API
 
             let searchNews = document.getElementById('searchBtn');
             let searchTopic = document.getElementById('searchInput');
