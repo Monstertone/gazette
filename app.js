@@ -1,4 +1,7 @@
 var containerPush = document.getElementById('newsContainer')
+var customActive = false;
+var formText = document.forms[1];
+
 
 window.onload = function(e) {
 
@@ -30,7 +33,7 @@ getNews(latestNews)
     let storyCount = storiesArray.length;
 
      // console.log(response.data.articles[9]['source']['name']);
-     console.log(response.data.articles);
+     // console.log(response.data.articles);
 
     for (let i=0; i < storyCount; i++) {
 
@@ -49,9 +52,10 @@ getNews(latestNews)
            if (!getImg) {
              getImg = "images/news-placeholder.jpg";
            }
-      let getPublishDate = response.data.articles[i]['publishedAt'];
+      let PublishDate = response.data.articles[i]['publishedAt'];
+      let getPublishDate = PublishDate.slice(0,10);
 
-      console.log(getPublishDate);
+      // console.log(getPublishDate);
 
        let newTitle = document.querySelector('.storyTitle')
        let newDescription = document.querySelector('.storyDescription')
@@ -75,20 +79,117 @@ getNews(latestNews)
 
    });
 
+}
      // FUNCTION TO PASS CUSTOM SEARCH TO API
 
             let searchNews = document.getElementById('searchBtn');
             let searchTopic = document.getElementById('searchInput');
-
+            // let searchVal = searchTopic.value;
             searchNews.addEventListener('click', function(e){
               e.preventDefault();
-            let searchVal = searchTopic.value;
-            let customSearch = `https://newsapi.org/v2/everything?q=${searchVal}&apiKey=6560880c487746438fe80efea6edbe2d`
 
-             if (searchVal) {
-               containerPush.innerHTML = "";
-               getNews(customSearch);
+              // let formText = document.forms[1];
+              if (customActive) {
+                var sourcesString = "";
+                for (let z=0; z<formText.length; z++){
+                  if (formText[z].checked){
+                    sourcesString = sourcesString + formText[z]['value']+ "," ;
+
+                  }
+
+                }
+
+                let searchVal = searchTopic.value;
+                let customSearch = `https://newsapi.org/v2/everything?q=${searchVal}&sources=${sourcesString}&apiKey=6560880c487746438fe80efea6edbe2d`
+
+
+                   containerPush.innerHTML = "";
+                   getNews(customSearch);
+
+                 console.log(sourcesString);
+                 console.log(customSearch)
+
+              } else {
+
+                console.log(customActive);
+              let searchVal = searchTopic.value;
+              let keyWordSearch = `https://newsapi.org/v2/everything?q=${searchVal}&apiKey=6560880c487746438fe80efea6edbe2d`
+
+               if (searchVal) {
+                 containerPush.innerHTML = "";
+                 getNews(keyWordSearch);
+               }
+
              }
 
-      })
-}
+           });
+
+
+
+
+
+
+
+
+
+
+    // FUNCTION TO ENABLE CLEAR BUTTON TO CLEAR SEARCH FIELD AND CUSTOM SEARCH DIV
+
+           let clearSearch = document.getElementById('clearBtn');
+           clearSearch.addEventListener('click', function(e){
+             e.preventDefault();
+             searchTopic.value = "";
+
+             if (customActive) {
+               let divGrow = document.getElementById('customSearchDiv');
+               divGrow.style.height = "0px";
+               let putForm = document.getElementById('sources');
+               putForm.style.display = "none";
+               for (let z=0; z<formText.length; z++){
+                 if (formText[z].checked){
+                   formText[z].checked = false;
+                 }
+               }
+
+
+             }
+
+
+
+
+           });
+
+           // FUNCTION TO ANIMATE AND POPULATE THE CUSTOM SEARCH DIV
+
+          let customSrc = document.getElementById('customBtn');
+          customSrc.addEventListener('click', function(e){
+            e.preventDefault();
+            customActive = true;
+            let height = 0;
+            let divGrow = document.getElementById('customSearchDiv');
+            let animateGrow = divGrow.style.height
+            var timer = setInterval(grow, 1);
+              function grow(){
+                 if(height == 300){
+                   clearInterval(timer);
+                 } else {
+                   height = height +30;
+                   divGrow.style.height = height + "px";
+
+                 }
+               }
+               let putForm = document.getElementById('sources');
+               putForm.style.display = "block";
+
+
+          })
+
+          // let formText = document.forms[1];
+          // var sourcesString ="";
+          // console.log("the formText is " + formText.length);
+          // for (let z=0; z<formText.length; z++){
+          //   if (formText[z].checked){
+          //     sourcesString = sourcesString + "," + formText[z];
+          //   }
+          // }
+          // console.log(sourcesString);

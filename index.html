@@ -13,6 +13,13 @@
 
   <body>
 
+    <!-- <div class="wholepage">
+
+
+    <div class="testmenu">
+       Here is where the menu would be
+    </div> -->
+
     <div class="container main">
 
            <div class="container flexible">
@@ -37,7 +44,78 @@
                <form>
                   <input type="text" id="searchInput" name="search-text" autofocus>
                   <input type="submit" id="searchBtn" value="Search">
+                  <input type="submit" id="clearBtn" value="Clear">
+                  <input type="submit" id="customBtn" value="Custom Search">
                </form>
+               <div id="customSearchDiv">
+                  <div id="sources">
+                    <!-- <h6>SELECT SOURCES</h6> -->
+                    <form>
+                  <fieldset class="sourceField">
+                    <legend>
+                      Select Sources
+                    </legend>
+                    <ul class=sourcesCheckBox>
+                      <li><input type="checkbox" id="cb1" value="abc-news" /><label for="cb1">ABC News</label></li>
+                      <li><input type="checkbox" id="cb2" value="ars-technica" /><label for="cb2">Ars Technica</label></li>
+                      <li><input type="checkbox" id="cb3" value="associated-press" /><label for="cb3">The Associated Press</label></li>
+                      <li><input type="checkbox" id="cb4" value="bbc-news" /><label for="cb4">BBC News</label></li>
+                      <li><input type="checkbox" id="cb5" value="bloomberg" /><label for="cb5">Bloomberg</label></li>
+                      <li><input type="checkbox" id="cb6" value="breitbart-news" /><label for="cb6">Breitbart</label></li>
+                      <li><input type="checkbox" id="cb7" value="business-insider" /><label for="cb7">Business Insider</label></li>
+                      <li><input type="checkbox" id="cb8" value="cbs-news" /><label for="cb8">CBS News</label></li>
+                      <li><input type="checkbox" id="cb9" value="cnbc" /><label for="cb9">CNBC</label></li>
+                      <li><input type="checkbox" id="cb10" value="cnn" /><label for="cb10">CNN</label></li>
+                      <li><input type="checkbox" id="cb11" value="daily-mail" /><label for="cb11">Daily Mail</label></li>
+                      <li><input type="checkbox" id="cb12" value="engadget" /><label for="cb12">Engadget</label></li>
+                      <li><input type="checkbox" id="cb13" value="espn" /><label for="cb13">ESPN</label></li>
+                      <li><input type="checkbox" id="cb14" value="financial-post" /><label for="cb14">Financial Post</label></li>
+                      <li><input type="checkbox" id="cb15" value="financial-times" /><label for="cb15">Financial Times</label></li>
+                      <li><input type="checkbox" id="cb16" value="fortune" /><label for="cb16">Fortune</label></li>
+                      <li><input type="checkbox" id="cb17" value="fox-news" /><label for="cb17">Fox News</label></li>
+                      <li><input type="checkbox" id="cb18" value="fox-sports" /><label for="cb18">Fox Sports</label></li>
+                      <li><input type="checkbox" id="cb19" value="google-news" /><label for="cb19">Google News</label></li>
+                      <!-- <li><input type="checkbox" id="cb20" value="hacker-news" /><label for="cb20">Hacker News</label></li> -->
+                      <li><input type="checkbox" id="cb21" value="independent" /><label for="cb21">Independent</label></li>
+                      <li><input type="checkbox" id="cb22" value="mashable" /><label for="cb22">Mashable</label></li>
+                      <li><input type="checkbox" id="cb23" value="medical-news-today" /><label for="cb23">Medical News Today</label></li>
+                      <li><input type="checkbox" id="cb24" value="mirror" /><label for="cb24">Mirror</label></li>
+                      <li><input type="checkbox" id="cb25" value="msnbc" /><label for="cb25">MSNBC</label></li>
+                      <li><input type="checkbox" id="cb26" value="newsweek" /><label for="cb26">Newsweek</label></li>
+                      <li><input type="checkbox" id="cb27" value="politico" /><label for="cb27">Politico</label></li>
+                      <li><input type="checkbox" id="cb28" value="reddit-r-all" /><label for="cb28">Reddit/r/all</label></li>
+                      <li><input type="checkbox" id="cb29" value="reuters" /><label for="cb29">Reuters</label></li>
+                      <li><input type="checkbox" id="cb30" value="techcrunch" /><label for="cb30">TechCrunch</label></li>
+                      <li><input type="checkbox" id="cb31" value="the-guardian-uk" /><label for="cb31">The Guardian</label></li>
+                      <li><input type="checkbox" id="cb32" value="the-huffington-post" /><label for="cb32">The Huffington Post</label></li>
+                      <li><input type="checkbox" id="cb33" value="the-new-york-times" /><label for="cb33">The New York Times</label></li>
+                      <li><input type="checkbox" id="cb34" value="the-telegraph" /><label for="cb34">The Telegraph</label></li>
+                      <li><input type="checkbox" id="cb35" value="the-wall-street-journal" /><label for="cb35">The Wall Street Journal</label></li>
+                      <li><input type="checkbox" id="cb36" value="the-washington-post" /><label for="cb36">The Washington Post</label></li>
+                      <li><input type="checkbox" id="cb37" value="the-washington-times" /><label for="cb37">The Washington Times</label></li>
+                      <li><input type="checkbox" id="cb38" value="time" /><label for="cb38">Time</label></li>
+                      <li><input type="checkbox" id="cb39" value="usa-today" /><label for="cb39">USA Today</label></li>
+                      <li><input type="checkbox" id="cb40" value="vice-news" /><label for="cb40">Vice News</label></li>
+                      <li><input type="checkbox" id="cb41" value="wired" /><label for="cb41">Wired</label></li>
+
+
+                    <!-- <li><input type="checkbox" name="newsSources" value="CNN">CNN
+                    </li>
+                    <li><input type="checkbox" name="newsSources" value="Fox News">Fox News
+                    </li>
+                    <input type="checkbox" name="newsSources" value="USA Today">USA Today</br>
+                    <input type="checkbox" name="newsSources" value="BBC">BBC<br/>
+                    <input type="checkbox" name="newsSources" value="Wired.com">Wired<br/>
+                    <input type="checkbox" name="newsSources" value="Tech Crunch">Tech Crunch</br>
+                    <input type="checkbox" name="newsSources" value="CBS">CBS</br>
+                    <input type="checkbox" name="newsSources" value="Associated Press">The AP</br>
+                    <input type="checkbox" name="newsSources" value="The Washington Post">The Washington Post</br> -->
+                    </ul>
+                  </fieldset>
+
+                    </form>
+                  </div>
+               </div>
             </div>
        </div>
        <!-- TEMPLATE TO CREATE STORY PLACEMENT -->
@@ -71,10 +149,10 @@
             </div>
 
 
+    </div>
 
 
-
-
+<!-- </div> -->
 
  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
  <script type="text/javascript" src="app.js"></script>

@@ -5,6 +5,81 @@
    src: url(fonts/OldEnglishFive.ttf);
 }
 
+/* .testmenu {
+  background-color: blue;
+  min-height: 500px;
+} */
+
+/* STYLES FOR CUSTOM SEARCH DIV AND LISTS */
+
+#customSearchDiv {
+  /* margin-top: 20px; */
+  background-color: #F5F5F5;
+  height: 0px;
+  /* margin-bottom: 35px */
+}
+#sources {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: left;
+  display: none;
+  margin-top: 10px;
+  align-self:
+  width: 65em;
+  max-height: 300px;
+}
+/* .sourcesCheckBox {
+  display: inline-block;
+  list-style: none;
+} */
+
+fieldset.sourceField {
+   margin: 0;
+   padding: 0;
+   margin-bottom: 1.25em;
+   height: 300px;
+   /* padding: .125em; */
+}
+fieldset.sourceField legend {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  /* margin-left: 40px; */
+  color: black;
+  font-size: 1em;
+  text-align: center;
+}
+
+
+ul.sourcesCheckBox {
+  margin: 0;
+  padding: 0;
+  margin-left: 5px;
+  list-style: none;
+}
+ul.sourcesCheckBox li input {
+  margin-right: .25em;
+}
+
+ul.sourcesCheckBox li {
+  border: 1px transparent solid;
+  display:inline-block;
+  width:12em;
+}
+
+ul.sourcesCheckBox li label {
+  margin-left: ;
+}
+ul.sourcesCheckBox li:hover,
+ul.sourcesCheckBox li.focus  {
+  background-color: #becee8;
+  border: 1px gray solid;
+  width: 12em;
+}
+
+
+/* MAIN DIV STYLES */
+
 .main {
   border: 1px solid black;
   box-shadow: 3px 5px 15px black;
@@ -46,6 +121,7 @@
 .formregion {
   padding:7px;
   text-align:center;
+  /* height: 300px; */
 }
 
 /* THESE ARE THE STYLES FOR THE RETURNED DATA */
@@ -151,5 +227,21 @@ border-left: 1px solid #CCCCCC;
 
 #searchBtn {
   margin-left: 10px;
+  cursor: pointer;
+  /* border-radius: 10px; */
+}
+#clearBtn {
+  width: 66px;
+  margin-left: 5px;
+}
 
+#customBtn {
+  background-color: #303030;
+  color: #FFF;
+  float: right;
+  margin-right: 20px;
+}
+#customBtn:hover {
+  background-color: #FFF;
+  color: #303030;
 }
