@@ -1,7 +1,7 @@
 var containerPush = document.getElementById('newsContainer')
 var customActive = false;
 var formText = document.forms[1];
-
+var customSearch;
 
 window.onload = function(e) {
 
@@ -94,7 +94,8 @@ getNews(latestNews)
                 for (let z=0; z<formText.length; z++){
                   if (formText[z].checked){
                     sourcesString = sourcesString + formText[z]['value']+ "," ;
-
+                  } else {
+                    var noCheckedBoxes = true;
                   }
 
                 }
@@ -103,8 +104,15 @@ getNews(latestNews)
                 let newsSort = document.getElementById('sort-selector').value;
                 let searchVal = searchTopic.value;
 
+                if (newsSelect === "top-headlines"){
+                  var customSearch = `https://newsapi.org/v2/${newsSelect}?q=${searchVal}&sources=${sourcesString}&pageSize=${newsQuantity}&apiKey=6560880c487746438fe80efea6edbe2d`
 
-                let customSearch = `https://newsapi.org/v2/${newsSelect}?q=${searchVal}&sources=${sourcesString}&pageSize=${newsQuantity}&sortBy=${newsSort}&apiKey=6560880c487746438fe80efea6edbe2d`
+                } else if (newsSelect === "everything"){
+                    var customSearch = `https://newsapi.org/v2/${newsSelect}?q=${searchVal}&sources=${sourcesString}&pageSize=${newsQuantity}&sortBy=${newsSort}&apiKey=6560880c487746438fe80efea6edbe2d`}
+                // WORK HERE TOMORROW MORNING!
+
+
+
 
 
                    containerPush.innerHTML = "";
@@ -135,14 +143,6 @@ getNews(latestNews)
            });
 
 
-
-
-
-
-
-
-
-
     // FUNCTION TO ENABLE CLEAR BUTTON TO CLEAR SEARCH FIELD AND CUSTOM SEARCH DIV
 
            let clearSearch = document.getElementById('clearBtn');
@@ -166,10 +166,7 @@ getNews(latestNews)
 
              }
 
-
-
-
-           });
+         });
 
            // FUNCTION TO ANIMATE AND POPULATE THE CUSTOM SEARCH DIV
 
@@ -196,9 +193,6 @@ getNews(latestNews)
                putSortBy.style.display = "block";
 
                // debugger;
-
-
-
 
                 // CHECKS TO SEE IF HEADLINES OR ALL NEWS IS SELECTED AND DISABLES
                 // SORT OPTIONS IF HEADLINES

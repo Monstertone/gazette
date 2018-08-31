@@ -245,16 +245,32 @@ border-left: 1px solid #CCCCCC;
 #searchBtn {
   margin-left: 10px;
   cursor: pointer;
+  border-radius: 5px;
+  background-color: #303030;
+  color: #FFF;
   /* border-radius: 10px; */
 }
+#searchBtn:hover {
+  background-color: #FFF;
+  color: #303030;
+}
+
 #clearBtn {
   width: 66px;
+  border-radius: 5px;
   margin-left: 5px;
+  cursor: pointer;
+}
+#clearBtn:hover {
+  background-color: #F5F5F5;
 }
 
 #customBtn {
-  background-color: #303030;
-  color: #FFF;
+  background-color: #becee8;
+  color: #000;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 5px;
   float: right;
   margin-right: 20px;
 }
