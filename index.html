@@ -98,22 +98,45 @@
                       <li><input type="checkbox" id="cb40" value="vice-news" /><label for="cb40">Vice News</label></li>
                       <li><input type="checkbox" id="cb41" value="wired" /><label for="cb41">Wired</label></li>
 
-
-                    <!-- <li><input type="checkbox" name="newsSources" value="CNN">CNN
-                    </li>
-                    <li><input type="checkbox" name="newsSources" value="Fox News">Fox News
-                    </li>
-                    <input type="checkbox" name="newsSources" value="USA Today">USA Today</br>
-                    <input type="checkbox" name="newsSources" value="BBC">BBC<br/>
-                    <input type="checkbox" name="newsSources" value="Wired.com">Wired<br/>
-                    <input type="checkbox" name="newsSources" value="Tech Crunch">Tech Crunch</br>
-                    <input type="checkbox" name="newsSources" value="CBS">CBS</br>
-                    <input type="checkbox" name="newsSources" value="Associated Press">The AP</br>
-                    <input type="checkbox" name="newsSources" value="The Washington Post">The Washington Post</br> -->
                     </ul>
                   </fieldset>
 
                     </form>
+                  </div>
+                  <div id="sortBy">
+
+                     <select id="headlinesOrAll">
+                       <option value="top-headlines">Headlines</option>
+                       <option value="everything">All News</option>
+                     </select>
+
+                     <label for="quantity">Quantity of Results:</label>
+                   <select id="quantity">
+
+                     <option value="20">20</option>
+                     <option value="40">40</option>
+                     <option value="60">60</option>
+                     <option value="80">80</option>
+                     <option value="100">100</option>
+
+                   </select>
+
+
+
+
+
+                      <label for="sort-selector" id="sort-label" >Sort By:</label>
+
+
+                    <select id="sort-selector" disabled>
+
+                      <option value="publishedAt">Publish Date</option>
+                      <option value="relevancy">Relevance to Search Term</option>
+                      <option value="popularity">Popularity</option>
+
+                    </select>
+
+
                   </div>
                </div>
             </div>

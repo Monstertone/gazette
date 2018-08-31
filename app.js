@@ -98,9 +98,13 @@ getNews(latestNews)
                   }
 
                 }
-
+                let newsSelect  = document.getElementById('headlinesOrAll').value;
+                let newsQuantity = document.getElementById('quantity').value;
+                let newsSort = document.getElementById('sort-selector').value;
                 let searchVal = searchTopic.value;
-                let customSearch = `https://newsapi.org/v2/everything?q=${searchVal}&sources=${sourcesString}&apiKey=6560880c487746438fe80efea6edbe2d`
+
+
+                let customSearch = `https://newsapi.org/v2/${newsSelect}?q=${searchVal}&sources=${sourcesString}&pageSize=${newsQuantity}&sortBy=${newsSort}&apiKey=6560880c487746438fe80efea6edbe2d`
 
 
                    containerPush.innerHTML = "";
@@ -108,6 +112,12 @@ getNews(latestNews)
 
                  console.log(sourcesString);
                  console.log(customSearch)
+                  console.log(newsSelect);
+                  console.log(newsQuantity);
+                  console.log(newsSort);
+
+                 // console.log(selected);
+
 
               } else {
 
@@ -150,6 +160,8 @@ getNews(latestNews)
                    formText[z].checked = false;
                  }
                }
+                let selectionBox = document.getElementById('sortBy')
+                selectionBox.style.display = "none";
 
 
              }
@@ -170,7 +182,7 @@ getNews(latestNews)
             let animateGrow = divGrow.style.height
             var timer = setInterval(grow, 1);
               function grow(){
-                 if(height == 300){
+                 if(height == 360){
                    clearInterval(timer);
                  } else {
                    height = height +30;
@@ -180,16 +192,40 @@ getNews(latestNews)
                }
                let putForm = document.getElementById('sources');
                putForm.style.display = "block";
+               let putSortBy = document.getElementById('sortBy')
+               putSortBy.style.display = "block";
+
+               // debugger;
+
+
+
+
+                // CHECKS TO SEE IF HEADLINES OR ALL NEWS IS SELECTED AND DISABLES
+                // SORT OPTIONS IF HEADLINES
+
+                    let checkSort = document.getElementById('headlinesOrAll');
+                checkSort.onchange= function(e){
+                 // console.dir(checkSort.options[checkSort.selectedIndex].value);
+                   let optionSelected = document.getElementById('headlinesOrAll').value;
+                   let sortStatus = document.getElementById('sort-selector');
+                   let sortLabel = document.getElementById('sort-label');
+
+
+
+                if (optionSelected === "top-headlines") {
+
+                  sortStatus.disabled = true;
+                  sortLabel.style.color = "gray";
+
+                } else if (optionSelected === "everything"){
+
+                  sortStatus.disabled = false;
+                  sortLabel.style.color = "black";
+                }
+
+              }
+
+
 
 
           })
-
-          // let formText = document.forms[1];
-          // var sourcesString ="";
-          // console.log("the formText is " + formText.length);
-          // for (let z=0; z<formText.length; z++){
-          //   if (formText[z].checked){
-          //     sourcesString = sourcesString + "," + formText[z];
-          //   }
-          // }
-          // console.log(sourcesString);
